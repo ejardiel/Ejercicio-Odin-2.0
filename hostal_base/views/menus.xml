@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <menuitem id="menu_hostal_root" name="Hostal" sequence="10"/>
+    <menuitem id="menu_hostal_config" name="Configuracion" parent="menu_hostal_root" sequence="10"/>
+</odoo>
