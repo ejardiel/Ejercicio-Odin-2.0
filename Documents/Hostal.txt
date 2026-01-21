@@ -1,0 +1,27 @@
+hostales(moteles)
+
+4 moteles cuentan con gasolinera y restaurante 
+servicios de gasolina y restaurante se cobran a parte de la habitacion
+cuenta con provedores para la gasolina le cobran 3 dolares el litro y el servicio es 3.50
+x cada motel tiene una persona para descargar la gasolina turno rotativo dos chef y 4 ayudantes de cocina x turno 1 chef y 2 ayudantes 
+x cada motel hay personal de mantenimiento y dos housekeeper x cada motel cada una se encarga de un piso una limpia la planta baja y la otra la otra planta 
+si permaneces rentado mas de 5 dias de 100 dolares al dia a 50 dolares adicionales un 50% mas 
+q las personas puedan entrar con su tekefono al sitio web sino te autenticas puedes ver en tiempo real donde estan los 4 moteles y si te logeas ademas de la localizacion puedes realizar ordenes al rstaurante 
+tipo de reservas al tocar una sucursal sin logearte te sale el form de reservas no es necesario estar logeado para pagar se puede pagar x adelantado o en el lugar 
+las habitaciones del 1 piso normal 100 y la 2 200 premium dolares 
+cuando pides el servicio a habitacion es 25 dolaresa adicionales 
+el producto q elaboraste tu le incrementas el 30% y el q no el 10%
+habitaciones normales camsa aire acondicionado tv y lampara dos camas y bano
+las premium adicional un minivar y una botella de champan de cortesia 
+si rompes algun equipo de la habitacion se te hace un cargo de un 200% de lo q me costo 
+si reservas y cancelas 72 horas antes relbolso completo un dia antes el 50% y si es el mismo dias no hay relbolso 
+para pagar en la carpeta tiene q ser personal en el sitio web se paga adelantado siempre
+se puede entrar mascotas y cuestan 25 dolares x mascota , las mascotas de ayuda son gratis 
+cliente frecuente en un lapso de 5 anos o mas a verse hospedado mas de 10 veces un descuento de 25%
+campanas de marketin la propia administracion 
+10 habitaciones normales y 5 premium 
+restaurante capacidad para 40 personas 
+en la gasolinera hay una tienda y sirve para externo internos 
+20 plazas de estacionamiento
+servicio wifi 2 dolares el dia va incluido een el formulario 
+trabajan 8 horas las mucamas 

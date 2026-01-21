@@ -32,6 +32,11 @@ class MotelReservation(models.Model):
         string="Restaurant Orders"
     )
     has_wifi_service = fields.Boolean(string="Wifi")
+    is_frequent = fields.Boolean(
+        string="Frequent Client",
+        compute="_compute_is_frequent",
+        store= True
+    )
     total_price = fields.Float(
         readonly=True,
         store=True,
@@ -74,7 +79,29 @@ class MotelReservation(models.Model):
             if not res.room_id.active:
                 raise UserError("This room is not available.")
 
-    @api.depends('nights','room_id.room_type','has_room_service')
+    @api.depends('partner_id', 'checkout_date', 'state')
+    def _compute_is_frequent(self):
+        hoy= fields.Date.today()
+        hace_5_anos = fields.Date.subtract(hoy, years=5)
+
+        for res in self:
+            reservas = self.env['motel.reservation'].search([
+                ('partner_id','=',res.partner_id.id),
+                ('checkout_date','>=',hace_5_anos),
+                ('checkout_date','<=',hoy),
+                ('state','!=','cancelled')
+            ])
+
+            res.is_frequent = len(reservas) > 10
+
+    @api.depends('nights',
+                 'room_id.room_type',
+                 'has_room_service',
+                 'pet',
+                 'help_pet',
+                 'has_wifi_service',
+                 'is_frequent',
+    )
     def _compute_total_price(self):
         for res in self:
             sum_total_price = 0.0
@@ -86,9 +113,11 @@ class MotelReservation(models.Model):
             else:
                 room_price = 0
 
+            if res.is_frequent:
+                sum_total_price *= 0.75
+
             if res.nights > 5:
-                sum_total_price += 5 * room_price
-                sum_total_price += (res.nights - 5) * room_price * 1.5
+                sum_total_price += 5 * room_price + (res.nights - 5) * room_price * 1.5
             else:
                 sum_total_price += res.nights * room_price
 
@@ -106,5 +135,7 @@ class MotelReservation(models.Model):
             if res.has_wifi_service:
                 sum_total_price += res.nights * 2
 
+
+
             if res.partner_id:
-            res.total_price = sum_total_price
+                res.total_price = sum_total_price
